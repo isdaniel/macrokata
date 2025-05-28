@@ -1,7 +1,7 @@
 @@ -6,7 +6,15 @@
  }
  ////////// DO NOT CHANGE ABOVE HERE /////////
- 
+
 -// TODO: create `hashmap!()` macro.
 +macro_rules! hashmap {
 +    ( $($k:literal => $v:expr,)* ) => {
@@ -12,6 +12,6 @@
 +        }
 +    }
 +}
- 
+
  ////////// DO NOT CHANGE BELOW HERE /////////
- 
+

@@ -9,9 +9,9 @@ fn print_hashmap(hashmap: &HashMap<&str, &str>) {
 macro_rules! hashmap {
     ( $($k:literal => $v:expr,)* ) => {
         {
-            let mut hm = HashMap::new();
-            $( hm.insert($k, $v); )*
-            hm
+            let mut map = HashMap::new();
+            $( map.insert($k, $v); )*
+            map
         }
     }
 }
