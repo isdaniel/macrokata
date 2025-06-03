@@ -1,4 +1,17 @@
-// TODO: Create the `curry!()` macro.
+macro_rules! curry {
+    (_,$block:block) => {
+        $block
+    };
+    (($argident:ident: $argtype:ty) => $(($argidents:ident: $argtypes:ty) =>)* _,$block:block) => {
+        move | $argident: $argtype| {
+            print_curried_argument($argident);
+            curry!($(($argidents: $argtypes) =>)* _, $block)
+        }
+    };
+}
+
+//curry!((min: i32) => (max: i32) => (item: &i32) => _, {
+//curry!((min: i32) => (max:i32) => (vec: &Vec<i32>) => _, {
 
 ////////// DO NOT CHANGE BELOW HERE /////////
 
